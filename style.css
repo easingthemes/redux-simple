@@ -1,0 +1,17 @@
+div {
+  float: left;
+  width: 100px;
+  text-align: center;
+  border: #ccc 1px solid;
+  margin: 10px;
+}
+
+input, span {
+  display: inline-block;
+  text-align: center;
+  border: none;
+}
+
+input {
+  max-width: 90%;
+}
