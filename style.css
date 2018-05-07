@@ -1,4 +1,4 @@
-div {
+.item > div {
   float: left;
   width: 100px;
   text-align: center;

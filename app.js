@@ -1,9 +1,9 @@
 const startApp = () => {
     // Action creator
-    const changeQuantity = (quantity) => {
-        return {
+    const changeQuantity = (price = 1, quantity) => {
+      return {
         type: 'QUANTITY_CHANGED',
-        payload: quantity
+        payload: quantity * price
       }
     };
 
@@ -11,7 +11,7 @@ const startApp = () => {
     const totalReducer = (state = 0, action) => {
       switch (action.type) {
         case 'QUANTITY_CHANGED':
-          return '';
+          return action.payload;
         default:
           return state;
       }
@@ -22,27 +22,31 @@ const startApp = () => {
       total: totalReducer
     });
 
+
+    // Create store
+    const store = Redux.createStore(
+      rootReducer,
+      {},
+      window.devToolsExtension ? window.devToolsExtension() : f => f
+    );
+
     // Action Dispatch
     const $quantityButton = document.querySelector('.quantity');
 
-    $quantityButton.addEventListener('oninput', (event) => {
-        const quantity = event.currentTarget.value;
+    $quantityButton.addEventListener('input', (event) => {
+      const quantity = event.currentTarget.value;
+      const $item = event.currentTarget.closest('.item');
+      const $priceEl = $item.querySelector('.price');
+      const price = $priceEl.innerHTML;
 
-      store.dispatch(changeQuantity(quantity));
+      store.dispatch(changeQuantity(price, quantity));
     });
 
     // Listen Store changes - Subscribe
     const updateDomTotal = () => {
-        const state = store.getState();
-      console.log('state', state);
+      const state = store.getState();
       document.querySelector('.total').innerHTML = state.total;
     };
-
-    const store = Redux.createStore(
-        rootReducer,
-      {},
-      window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-    );
 
     store.subscribe(updateDomTotal);
 };

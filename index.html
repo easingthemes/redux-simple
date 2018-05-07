@@ -2,18 +2,21 @@
 <head>
     <title>Simple redux</title>
     <link rel="stylesheet" href="./style.css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/redux/3.0.5/redux.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/redux/4.0.0/redux.min.js"></script>
 </head>
 <body>
-    <div>
-      <span class="price">2</span>
+    <div class="item">
+        <div>
+          <span class="price">2</span>
+        </div>
+        <div>
+          <input type="number" class="quantity" value="0" min="0" />
+        </div>
+        <div>
+          <span class="total">0</span>
+        </div>
     </div>
-    <div>
-      <input type="number" class="quantity" value="0" min="0" />
-    </div>
-    <div>
-      <span class="total">0</span>
-    </div>
+
     <script src="./app.js" type="application/javascript"></script>
 </body>
 </html>
