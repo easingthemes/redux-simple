@@ -36,3 +36,9 @@ input {
 .items .loader {
     display: block;
 }
+
+.cl:after {
+    content: ' ';
+    display: block;
+    clear: both;
+}
