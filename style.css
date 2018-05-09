@@ -37,7 +37,7 @@ input {
     display: block;
 }
 
-.cl:after {
+.cl:after, .item:after {
     content: ' ';
     display: block;
     clear: both;

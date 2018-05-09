@@ -1,0 +1,39 @@
+<html>
+<head>
+    <title>Simple redux</title>
+    <link rel="stylesheet" href="./style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/redux/4.0.0/redux.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/redux-thunk/2.2.0/redux-thunk.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reselect/3.0.1/reselect.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.10/lodash.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/redux-immutable@4.0.0/dist/index.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/immutable/3.8.2/immutable.min.js"></script>
+</head>
+<body>
+    <div><a href="./index.html">Simple</a><a href="./index-middleware.html">Thunk</a></div>
+    <section class="header cl">
+      <div>Name</div>
+      <div>Ticket Price</div>
+      <div>Tickets</div>
+      <div>Subtotal</div>
+    </section>
+    <div class="items cl"></div>
+    
+    <div class="item__template">
+        <div>
+          <span class="name">Name</span>
+        </div>
+        <div>
+          <span class="price">2</span>
+        </div>
+        <div>
+          <input type="number" class="quantity" value="0" min="0" />
+        </div>
+        <div>
+          <span class="total">0</span>
+        </div>
+    </div>
+    <div class="loader">Loading ...</div>
+    <script src="./app-immutablejs.js" type="application/javascript"></script>
+</body>
+</html>
